@@ -89,7 +89,7 @@ public class Options {
     private void parseInterval() {
         String every = options.optString("every").toLowerCase();
 
-        if (every.isEmpty()) {
+        if (every.isEmpty() || every.equals("null")) {
             interval = 0;
         } else
         if (every.equals("second")) {
@@ -226,7 +226,7 @@ public class Options {
     public String getTitle() {
         String title = options.optString("title", "");
 
-        if (title.isEmpty()) {
+        if (title.isEmpty() || title.equals("null")) {
             title = context.getApplicationInfo().loadLabel(
                     context.getPackageManager()).toString();
         }
