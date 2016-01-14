@@ -241,7 +241,7 @@ public class Options {
     public int getLedColor() {
         String hex = options.optString("led", null);
 
-        if (hex == null) {
+        if (hex == null || hex.equals("null")) {
             return NotificationCompat.DEFAULT_LIGHTS;
         }
 
@@ -258,7 +258,7 @@ public class Options {
     public int getColor() {
         String hex = options.optString("color", null);
 
-        if (hex == null) {
+        if (hex == null || hex.equals("null")) {
             return NotificationCompat.COLOR_DEFAULT;
         }
 
