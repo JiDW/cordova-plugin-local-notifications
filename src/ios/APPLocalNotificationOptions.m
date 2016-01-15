@@ -237,6 +237,9 @@ NSString* const DEFAULT_SOUND = @"res://platform_default";
  */
 - (BOOL) stringIsNullOrEmpty:(NSString*)str
 {
+    if([str isEqualToString:@"null"])
+        return YES;
+    
     if (str == (NSString*)[NSNull null])
         return YES;
 
